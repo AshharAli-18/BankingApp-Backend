@@ -26,7 +26,7 @@ public class UserControllerTests {
     @Order(1)
     @Test
     public void testLoginCustomerSuccess() throws Exception {
-        String loginRequest = "{\"email\":\"mian@gmail.com\",\"password\":\"12345\"}";
+        String loginRequest = "{\"email\":\"sheikh@gmail.com\",\"password\":\"12345\"}";
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/loginCustomer")
                         .contentType(MediaType.APPLICATION_JSON_VALUE)

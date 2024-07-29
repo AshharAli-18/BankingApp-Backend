@@ -20,7 +20,7 @@ public class AccountController {
     }
 
     @GetMapping("/api/getAccoutByUserId/{userId}")
-    @PreAuthorize("hasRole('ROLE_CUSTOMER')")
+    @PreAuthorize("hasRole('ROLE_CUSTOMER')or hasRole('ROLE_ADMIN')")
     public Account getAccuntByUserId(@PathVariable("userId") long userId) {
         return accountService.getAccountByUserId(userId);
     }
