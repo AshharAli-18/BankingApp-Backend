@@ -12,8 +12,8 @@ public class OtpService {
     @Autowired
     private OtpRepository otpRepository;
 
-//    @Autowired
-//    private EmailService emailService;
+    @Autowired
+    private EmailSenderService emailService;
 
     private String generateOtp() {
         return String.format("%06d", new Random().nextInt(999999));
@@ -26,7 +26,7 @@ public class OtpService {
         otp.setOtp(generatedOtp);
         otp.setExpiration(LocalDateTime.now().plusMinutes(5));
         otpRepository.save(otp);
-//        emailService.sendEmail(email, "Your OTP", "Your OTP is: " + generatedOtp);
+        emailService.sendEmail(email, "OTP Generated", "Your generated otp is: " + generatedOtp);
         return generatedOtp;
     }
 
