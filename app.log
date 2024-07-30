@@ -1692,3 +1692,95 @@ jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not 
 2024-07-30T17:04:54.925+05:00  INFO 1508 --- [BankingApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-07-30T17:04:54.927+05:00  INFO 1508 --- [BankingApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-07-30T17:04:54.929+05:00  INFO 1508 --- [BankingApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-30T19:30:13.100+05:00  INFO 14176 --- [BankingApp] [main] c.T.BankingApp.BankingAppApplication     : Starting BankingAppApplication using Java 21.0.3 with PID 14176 (C:\Users\Dell\Downloads\BankingApp-Backend\target\classes started by Dell in C:\Users\Dell\Downloads\BankingApp-Backend)
+2024-07-30T19:30:13.105+05:00  INFO 14176 --- [BankingApp] [main] c.T.BankingApp.BankingAppApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-07-30T19:30:15.942+05:00  INFO 14176 --- [BankingApp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-30T19:30:16.200+05:00  INFO 14176 --- [BankingApp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 226 ms. Found 6 JPA repository interfaces.
+2024-07-30T19:30:17.374+05:00  INFO 14176 --- [BankingApp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-30T19:30:17.392+05:00  INFO 14176 --- [BankingApp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-30T19:30:17.393+05:00  INFO 14176 --- [BankingApp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-30T19:30:17.472+05:00  INFO 14176 --- [BankingApp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-30T19:30:17.473+05:00  INFO 14176 --- [BankingApp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4247 ms
+2024-07-30T19:30:17.520+05:00  INFO 14176 --- [BankingApp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-30T19:30:18.013+05:00  INFO 14176 --- [BankingApp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:C:/databases/bankingapp user=TEST
+2024-07-30T19:30:18.018+05:00  INFO 14176 --- [BankingApp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-30T19:30:18.034+05:00  INFO 14176 --- [BankingApp] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:C:/databases/bankingapp'
+2024-07-30T19:30:18.318+05:00  INFO 14176 --- [BankingApp] [main] liquibase.database                       : Set default schema name to PUBLIC
+2024-07-30T19:30:18.996+05:00  INFO 14176 --- [BankingApp] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-07-30T19:30:19.020+05:00  INFO 14176 --- [BankingApp] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-07-30T19:30:19.022+05:00  INFO 14176 --- [BankingApp] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-07-30T19:30:19.047+05:00  INFO 14176 --- [BankingApp] [main] liquibase.util                           : UPDATE SUMMARY
+2024-07-30T19:30:19.047+05:00  INFO 14176 --- [BankingApp] [main] liquibase.util                           : Run:                          0
+2024-07-30T19:30:19.048+05:00  INFO 14176 --- [BankingApp] [main] liquibase.util                           : Previously run:               0
+2024-07-30T19:30:19.049+05:00  INFO 14176 --- [BankingApp] [main] liquibase.util                           : Filtered out:                 0
+2024-07-30T19:30:19.049+05:00  INFO 14176 --- [BankingApp] [main] liquibase.util                           : -------------------------------
+2024-07-30T19:30:19.049+05:00  INFO 14176 --- [BankingApp] [main] liquibase.util                           : Total change sets:            0
+2024-07-30T19:30:19.051+05:00  INFO 14176 --- [BankingApp] [main] liquibase.util                           : Update summary generated
+2024-07-30T19:30:19.088+05:00  INFO 14176 --- [BankingApp] [main] liquibase.lockservice                    : Successfully released change log lock
+2024-07-30T19:30:19.090+05:00  INFO 14176 --- [BankingApp] [main] liquibase.command                        : Command execution complete
+2024-07-30T19:30:19.211+05:00  INFO 14176 --- [BankingApp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-30T19:30:19.398+05:00  INFO 14176 --- [BankingApp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-30T19:30:19.469+05:00  INFO 14176 --- [BankingApp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-30T19:30:19.957+05:00  INFO 14176 --- [BankingApp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-30T19:30:21.822+05:00  INFO 14176 --- [BankingApp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-30T19:30:21.827+05:00  INFO 14176 --- [BankingApp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T19:30:23.223+05:00  INFO 14176 --- [BankingApp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-30T19:30:24.341+05:00  WARN 14176 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:30:24.341+05:00  WARN 14176 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:30:24.342+05:00  WARN 14176 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:30:24.345+05:00  WARN 14176 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:30:24.345+05:00  WARN 14176 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:30:24.345+05:00  WARN 14176 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:30:24.346+05:00  WARN 14176 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:30:24.475+05:00  INFO 14176 --- [BankingApp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-30T19:30:24.491+05:00  INFO 14176 --- [BankingApp] [main] c.T.BankingApp.BankingAppApplication     : Started BankingAppApplication in 12.399 seconds (process running for 14.007)
+2024-07-30T19:32:07.267+05:00  INFO 14176 --- [BankingApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T19:32:07.271+05:00  INFO 14176 --- [BankingApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-30T19:32:07.274+05:00  INFO 14176 --- [BankingApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-30T19:32:11.237+05:00  INFO 15744 --- [BankingApp] [main] c.T.BankingApp.BankingAppApplication     : Starting BankingAppApplication using Java 21.0.3 with PID 15744 (C:\Users\Dell\Downloads\BankingApp-Backend\target\classes started by Dell in C:\Users\Dell\Downloads\BankingApp-Backend)
+2024-07-30T19:32:11.241+05:00  INFO 15744 --- [BankingApp] [main] c.T.BankingApp.BankingAppApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-07-30T19:32:12.963+05:00  INFO 15744 --- [BankingApp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-30T19:32:13.089+05:00  INFO 15744 --- [BankingApp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 6 JPA repository interfaces.
+2024-07-30T19:32:14.097+05:00  INFO 15744 --- [BankingApp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-30T19:32:14.111+05:00  INFO 15744 --- [BankingApp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-30T19:32:14.111+05:00  INFO 15744 --- [BankingApp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-30T19:32:14.235+05:00  INFO 15744 --- [BankingApp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-30T19:32:14.239+05:00  INFO 15744 --- [BankingApp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2909 ms
+2024-07-30T19:32:14.506+05:00  INFO 15744 --- [BankingApp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-30T19:32:15.466+05:00  INFO 15744 --- [BankingApp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:C:/databases/bankingapp user=TEST
+2024-07-30T19:32:15.470+05:00  INFO 15744 --- [BankingApp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-30T19:32:15.510+05:00  INFO 15744 --- [BankingApp] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:C:/databases/bankingapp'
+2024-07-30T19:32:15.990+05:00  INFO 15744 --- [BankingApp] [main] liquibase.database                       : Set default schema name to PUBLIC
+2024-07-30T19:32:17.213+05:00  INFO 15744 --- [BankingApp] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-07-30T19:32:17.246+05:00  INFO 15744 --- [BankingApp] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-07-30T19:32:17.249+05:00  INFO 15744 --- [BankingApp] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-07-30T19:32:17.279+05:00  INFO 15744 --- [BankingApp] [main] liquibase.util                           : UPDATE SUMMARY
+2024-07-30T19:32:17.279+05:00  INFO 15744 --- [BankingApp] [main] liquibase.util                           : Run:                          0
+2024-07-30T19:32:17.279+05:00  INFO 15744 --- [BankingApp] [main] liquibase.util                           : Previously run:               0
+2024-07-30T19:32:17.279+05:00  INFO 15744 --- [BankingApp] [main] liquibase.util                           : Filtered out:                 0
+2024-07-30T19:32:17.279+05:00  INFO 15744 --- [BankingApp] [main] liquibase.util                           : -------------------------------
+2024-07-30T19:32:17.280+05:00  INFO 15744 --- [BankingApp] [main] liquibase.util                           : Total change sets:            0
+2024-07-30T19:32:17.281+05:00  INFO 15744 --- [BankingApp] [main] liquibase.util                           : Update summary generated
+2024-07-30T19:32:17.323+05:00  INFO 15744 --- [BankingApp] [main] liquibase.lockservice                    : Successfully released change log lock
+2024-07-30T19:32:17.325+05:00  INFO 15744 --- [BankingApp] [main] liquibase.command                        : Command execution complete
+2024-07-30T19:32:17.493+05:00  INFO 15744 --- [BankingApp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-30T19:32:17.632+05:00  INFO 15744 --- [BankingApp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-30T19:32:17.684+05:00  INFO 15744 --- [BankingApp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-30T19:32:18.228+05:00  INFO 15744 --- [BankingApp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-30T19:32:20.465+05:00  INFO 15744 --- [BankingApp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-30T19:32:20.471+05:00  INFO 15744 --- [BankingApp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T19:32:21.846+05:00  INFO 15744 --- [BankingApp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-30T19:32:23.426+05:00  WARN 15744 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:32:23.427+05:00  WARN 15744 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:32:23.428+05:00  WARN 15744 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:32:23.428+05:00  WARN 15744 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:32:23.428+05:00  WARN 15744 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:32:23.429+05:00  WARN 15744 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:32:23.432+05:00  WARN 15744 --- [BankingApp] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-30T19:32:23.862+05:00  INFO 15744 --- [BankingApp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-30T19:32:23.910+05:00  INFO 15744 --- [BankingApp] [main] c.T.BankingApp.BankingAppApplication     : Started BankingAppApplication in 13.554 seconds (process running for 14.581)
+2024-07-30T19:33:06.148+05:00  INFO 15744 --- [BankingApp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-30T19:33:06.148+05:00  INFO 15744 --- [BankingApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-30T19:33:06.150+05:00  INFO 15744 --- [BankingApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-07-30T21:16:17.287+05:00  WARN 15744 --- [BankingApp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h39m31s706ms983µs100ns).
+2024-07-30T21:33:04.168+05:00  WARN 15744 --- [BankingApp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m46s445ms721µs500ns).
