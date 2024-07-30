@@ -11,5 +11,7 @@ public class TransferRequest {
 //    private long toAccountId;
     private String toAccountNumber;
     private long amount;
+    private String email;
+    private String otp;
 
 }

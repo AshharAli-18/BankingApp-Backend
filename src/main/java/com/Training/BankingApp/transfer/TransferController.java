@@ -17,7 +17,7 @@ public class TransferController {
     @PreAuthorize("hasRole('ROLE_CUSTOMER')")
     public ResponseEntity<String> transferMoney(@RequestBody TransferRequest transferRequest){
         try{
-            transferService.transfer(transferRequest.getFromAccountId(), transferRequest.getToAccountNumber(), transferRequest.getAmount());
+            transferService.transfer(transferRequest.getFromAccountId(), transferRequest.getToAccountNumber(), transferRequest.getAmount(), transferRequest.getOtp(), transferRequest.getEmail());
             return ResponseEntity.ok("Money transferred successfully");
         }catch(Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());

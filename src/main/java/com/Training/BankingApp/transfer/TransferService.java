@@ -1,6 +1,7 @@
 package com.Training.BankingApp.transfer;
 
 import com.Training.BankingApp.account.Account;
+import com.Training.BankingApp.otp.OtpService;
 import com.Training.BankingApp.transaction.Transaction;
 import com.Training.BankingApp.account.AccountRepository;
 import com.Training.BankingApp.transaction.TransactionRepository;
@@ -23,8 +24,17 @@ public class TransferService {
     @Autowired
     private AccountRepository accountRepository;
 
+    @Autowired
+    private OtpService otpService;
+
+
     @Transactional
-    public void transfer(Long fromAccountId, String toAccountNumber, long amount) {
+    public void transfer(Long fromAccountId, String toAccountNumber, long amount, String otp, String email) {
+        // Validate OTP
+        if (!otpService.validateOtp(email, otp)) {
+            throw new RuntimeException("Invalid or expired OTP");
+        }
+
         Account fromAccount = accountRepository.findById(fromAccountId)
                 .orElseThrow(() -> new RuntimeException("From account not found"));
         Account toAccount = accountRepository.findByAccountNumber(toAccountNumber);
@@ -75,6 +85,7 @@ public class TransferService {
 
         transactionRepository.save(transactionReceiver);
     }
+
 
 
     public List<Transfer> getAllTransfers(Integer page, Integer size) {
