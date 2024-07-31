@@ -24,7 +24,7 @@ public class OtpService {
         Otp otp = new Otp();
         otp.setEmail(email);
         otp.setOtp(generatedOtp);
-        otp.setExpiration(LocalDateTime.now().plusMinutes(5));
+        otp.setExpiration(LocalDateTime.now().plusMinutes(2));
         otpRepository.save(otp);
         emailService.sendEmail(email, "OTP Generated", "Your generated otp is: " + generatedOtp);
         return generatedOtp;
