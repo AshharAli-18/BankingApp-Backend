@@ -87,7 +87,6 @@ public class TransferService {
     }
 
 
-
     public List<Transfer> getAllTransfers(Integer page, Integer size) {
         if(page<0){
             page=0;
