@@ -1878,3 +1878,6 @@ jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not 
 2024-07-31T09:46:25.483+05:00  INFO 5880 --- [BankingApp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-31T09:46:25.483+05:00  INFO 5880 --- [BankingApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-07-31T09:46:25.483+05:00  INFO 5880 --- [BankingApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-07-31T10:33:38.783+05:00  INFO 5880 --- [BankingApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-31T10:33:38.783+05:00  INFO 5880 --- [BankingApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-31T10:33:38.783+05:00  INFO 5880 --- [BankingApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
