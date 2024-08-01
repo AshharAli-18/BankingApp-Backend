@@ -28,6 +28,7 @@ public class UserController {
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<?> loginAdmin(@RequestBody LoginRequest loginRequest) {
         try {
+            System.out.print("Admin login api called");
             ResponseEntity<?> response = userService.loginAdmin(loginRequest);
 
             // Return the response directly without modifying it

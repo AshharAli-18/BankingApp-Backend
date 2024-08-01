@@ -17,6 +17,7 @@ public class CustomerRequestController {
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<?> customerrequest(@RequestBody CustomerRequestDTO customerRequestDTO) {
         try{
+            System.out.print("customer request api called");
             customerRequestService.createCustomerRequest(customerRequestDTO);
             return ResponseEntity.ok("Customer Request Sent Successfully!");
         }catch (Exception e){

@@ -10,10 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.util.Base64;
 import java.util.List;
 import java.util.UUID;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class AccountService {
@@ -26,6 +29,30 @@ public class AccountService {
     private TransactionRepository transactionRepository;
     @Autowired
     private TransferRepository transferRepository;
+
+    private static final String PREFIX = "MB";
+    private static final int NUMBER_LENGTH = 8;
+    private final SecureRandom random = new SecureRandom();
+    private final Set<String> generatedAccountNumbers = new HashSet<>();
+
+
+    public String generateAccountNumber() {
+        String accountNumber;
+        do {
+            accountNumber = PREFIX + generateUniqueNumber();
+        } while (generatedAccountNumbers.contains(accountNumber));
+        generatedAccountNumbers.add(accountNumber);
+        return accountNumber;
+    }
+
+    private String generateUniqueNumber() {
+        StringBuilder sb = new StringBuilder(NUMBER_LENGTH);
+        for (int i = 0; i < NUMBER_LENGTH; i++) {
+            sb.append(random.nextInt(10)); // Generates a random digit from 0 to 9
+        }
+        return sb.toString();
+    }
+
 
     public Account getAccount(long accountId) {
         Account account=accountRepository.findById(accountId).get();
@@ -47,27 +74,27 @@ public class AccountService {
         }
     }
 
-    public String generateAccountNumber() {
-        UUID uuid = UUID.randomUUID();
-        // Encode UUID to Base64 and then trim it to desired length
-        String base64UUID = Base64.getUrlEncoder().withoutPadding().encodeToString(toByteArray(uuid));
-        return base64UUID.substring(0, 14);
-    }
-
-    private byte[] toByteArray(UUID uuid) {
-        long msb = uuid.getMostSignificantBits();
-        long lsb = uuid.getLeastSignificantBits();
-        byte[] buffer = new byte[16];
-
-        for (int i = 0; i < 8; i++) {
-            buffer[i] = (byte) (msb >>> 8 * (7 - i));
-        }
-        for (int i = 8; i < 16; i++) {
-            buffer[i] = (byte) (lsb >>> 8 * (7 - i));
-        }
-
-        return buffer;
-    }
+//    public String generateAccountNumber() {
+//        UUID uuid = UUID.randomUUID();
+//        // Encode UUID to Base64 and then trim it to desired length
+//        String base64UUID = Base64.getUrlEncoder().withoutPadding().encodeToString(toByteArray(uuid));
+//        return base64UUID.substring(0, 14);
+//    }
+//
+//    private byte[] toByteArray(UUID uuid) {
+//        long msb = uuid.getMostSignificantBits();
+//        long lsb = uuid.getLeastSignificantBits();
+//        byte[] buffer = new byte[16];
+//
+//        for (int i = 0; i < 8; i++) {
+//            buffer[i] = (byte) (msb >>> 8 * (7 - i));
+//        }
+//        for (int i = 8; i < 16; i++) {
+//            buffer[i] = (byte) (lsb >>> 8 * (7 - i));
+//        }
+//
+//        return buffer;
+//    }
 
     public List<Account> getAllAccounts(Integer page, Integer size) {
         if(page<0){

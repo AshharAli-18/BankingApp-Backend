@@ -50,6 +50,7 @@ public class AccountController {
     @PreAuthorize("hasRole('ROLE_CUSTOMER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<?> registration(@RequestBody AccountCreateRequest accountCreateRequest) {
         try{
+
             accountService.createAccount(accountCreateRequest);
             return ResponseEntity.ok("Account Created Successfully!");
         }catch (Exception e){
