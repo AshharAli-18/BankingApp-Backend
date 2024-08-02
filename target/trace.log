@@ -29344,3 +29344,7 @@ Unconditional classes:
 2024-08-02 14:22:34 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-08-02 14:22:34 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.Training.BankingApp.account.Account@65b8eda6, com.Training.BankingApp.account.Account@45d0cb84]]
 2024-08-02 14:22:34 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-02 14:22:52 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-08-02 14:22:52 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2024-08-02 14:23:22 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-08-02 14:23:22 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
