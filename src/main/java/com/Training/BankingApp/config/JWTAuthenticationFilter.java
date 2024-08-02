@@ -22,6 +22,8 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
+    private static final int BEARER_PREFIX_LENGTH = 7; // Magic number replaced with constant
+
     private final JWTService jwtService;
     private final UserService userService;
 
@@ -31,15 +33,15 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
         final String jwt;
         final String userEmail;
 
-        if(StringUtils.isEmpty(authorizationHeader) || !org.apache.commons.lang3.StringUtils.startsWith(authorizationHeader, "Bearer ")) {
-             filterChain.doFilter(request, response);
-             return;
+        if (StringUtils.isEmpty(authorizationHeader) || !org.apache.commons.lang3.StringUtils.startsWith(authorizationHeader, "Bearer ")) {
+            filterChain.doFilter(request, response);
+            return;
         }
 
-        jwt = authorizationHeader.substring(7);
-        userEmail=jwtService.extractUserName(jwt);
+        jwt = authorizationHeader.substring(BEARER_PREFIX_LENGTH); // Use constant
+        userEmail = jwtService.extractUserName(jwt);
 
-        if(StringUtils.isNotEmpty(userEmail) && SecurityContextHolder.getContext().getAuthentication() == null) {
+        if (StringUtils.isNotEmpty(userEmail) && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userService.userDetailsService().loadUserByUsername(userEmail);
 
             if (jwtService.isTokenValid(jwt, userDetails)) {
@@ -49,7 +51,6 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
                         userDetails, null, userDetails.getAuthorities()
                 );
 
-
                 token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
                 securityContext.setAuthentication(token);
@@ -58,6 +59,4 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(request, response);
     }
-
-
 }

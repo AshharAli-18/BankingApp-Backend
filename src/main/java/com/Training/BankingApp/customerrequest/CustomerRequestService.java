@@ -7,32 +7,30 @@ import java.util.List;
 
 @Service
 public class CustomerRequestService {
+
     @Autowired
     private CustomerRequestRepository customerRequestRepository;
 
-    public void createCustomerRequest(CustomerRequestDTO customerRequestdto) {
-
-        if(customerRequestRepository.existsByUsername(customerRequestdto.getUsername())) {
+    public void createCustomerRequest(CustomerRequestDTO customerRequestDto) {
+        if (customerRequestRepository.existsByUsername(customerRequestDto.getUsername())) {
             throw new RuntimeException("Request already sent!");
         }
-        if(customerRequestRepository.existsByEmail(customerRequestdto.getEmail())) {
+        if (customerRequestRepository.existsByEmail(customerRequestDto.getEmail())) {
             throw new RuntimeException("Request already sent!");
         }
 
         CustomerRequest customerRequest = new CustomerRequest();
         customerRequest.setId(System.currentTimeMillis());
-        customerRequest.setUsername(customerRequestdto.getUsername());
-        customerRequest.setEmail(customerRequestdto.getEmail());
-        customerRequest.setPassword(customerRequestdto.getPassword());
-        customerRequest.setName(customerRequestdto.getName());
-        customerRequest.setAddress(customerRequestdto.getAddress());
-        customerRequest.setCnic(customerRequestdto.getCnic());
-        customerRequest.setAccountType(customerRequestdto.getAccountType());
-        customerRequest.setPhoneNumber(customerRequestdto.getPhoneNumber());
+        customerRequest.setUsername(customerRequestDto.getUsername());
+        customerRequest.setEmail(customerRequestDto.getEmail());
+        customerRequest.setPassword(customerRequestDto.getPassword());
+        customerRequest.setName(customerRequestDto.getName());
+        customerRequest.setAddress(customerRequestDto.getAddress());
+        customerRequest.setCnic(customerRequestDto.getCnic());
+        customerRequest.setAccountType(customerRequestDto.getAccountType());
+        customerRequest.setPhoneNumber(customerRequestDto.getPhoneNumber());
 
         customerRequestRepository.save(customerRequest);
-
-
     }
 
     public List<CustomerRequest> getAllRequests() {
@@ -40,20 +38,14 @@ public class CustomerRequestService {
     }
 
     public CustomerRequest getRequest(int id) {
-        CustomerRequest customerRequest=customerRequestRepository.findById(id).get();
-        if(customerRequest!=null){
-            return customerRequest;
-        }
-        else {
-            return null;
-        }
+        CustomerRequest customerRequest = customerRequestRepository.findById(id).orElse(null);
+        return customerRequest;
     }
 
     public void deleteRequest(int id) {
-        CustomerRequest customerRequest=customerRequestRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Account not found"));
+        CustomerRequest customerRequest = customerRequestRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Request not found"));
 
         customerRequestRepository.delete(customerRequest);
-
     }
 }

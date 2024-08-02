@@ -15,11 +15,17 @@ public class TransferController {
 
     @PostMapping("/api/transferMoney")
     @PreAuthorize("hasRole('ROLE_CUSTOMER')")
-    public ResponseEntity<String> transferMoney(@RequestBody TransferRequest transferRequest){
-        try{
-            transferService.transfer(transferRequest.getFromAccountId(), transferRequest.getToAccountNumber(), transferRequest.getAmount(), transferRequest.getOtp(), transferRequest.getEmail());
+    public ResponseEntity<String> transferMoney(@RequestBody TransferRequest transferRequest) {
+        try {
+            transferService.transfer(
+                    transferRequest.getFromAccountId(),
+                    transferRequest.getToAccountNumber(),
+                    transferRequest.getAmount(),
+                    transferRequest.getOtp(),
+                    transferRequest.getEmail()
+            );
             return ResponseEntity.ok("Money transferred successfully");
-        }catch(Exception e){
+        } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
@@ -27,9 +33,10 @@ public class TransferController {
     @GetMapping("/api/getAllTransfers")
     @CrossOrigin(origins = "http://localhost:3000")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public List<Transfer> getAllTransfers(@RequestParam(name = "page", defaultValue ="0")Integer page, @RequestParam(name = "size", defaultValue ="10")Integer size) {
+    public List<Transfer> getAllTransfers(
+            @RequestParam(name = "page", defaultValue = "0") Integer page,
+            @RequestParam(name = "size", defaultValue = "10") Integer size
+    ) {
         return transferService.getAllTransfers(page, size);
     }
-
-
 }

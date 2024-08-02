@@ -23,18 +23,22 @@ public class AccountService {
 
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private TransactionRepository transactionRepository;
+
     @Autowired
     private TransferRepository transferRepository;
+
     @Autowired
     private DeletedAccountRepository deletedAccountRepository;
 
     private static final String PREFIX = "MB";
     private static final int NUMBER_LENGTH = 8;
+    private static final int MAX_PAGE_SIZE = 1000;
+    private static final int RANDOM_DIGIT_UPPER_BOUND = 10;
     private final SecureRandom random = new SecureRandom();
     private final Set<String> generatedAccountNumbers = new HashSet<>();
-
 
     public String generateAccountNumber() {
         String accountNumber;
@@ -48,60 +52,26 @@ public class AccountService {
     private String generateUniqueNumber() {
         StringBuilder sb = new StringBuilder(NUMBER_LENGTH);
         for (int i = 0; i < NUMBER_LENGTH; i++) {
-            sb.append(random.nextInt(10)); // Generates a random digit from 0 to 9
+            sb.append(random.nextInt(RANDOM_DIGIT_UPPER_BOUND)); // Generates a random digit from 0 to 9
         }
         return sb.toString();
     }
 
-
     public Account getAccount(long accountId) {
-        Account account=accountRepository.findById(accountId).get();
-        if(account!=null){
-            return account;
-        }
-        else {
-            return null;
-        }
+        return accountRepository.findById(accountId)
+                .orElse(null);
     }
 
     public Account getAccountByUserId(long userId) {
-        Account account=accountRepository.findByUserId(userId);
-        if(account!=null){
-            return account;
-        }
-        else {
-            return null;
-        }
+        return accountRepository.findByUserId(userId);
     }
 
-//    public String generateAccountNumber() {
-//        UUID uuid = UUID.randomUUID();
-//        // Encode UUID to Base64 and then trim it to desired length
-//        String base64UUID = Base64.getUrlEncoder().withoutPadding().encodeToString(toByteArray(uuid));
-//        return base64UUID.substring(0, 14);
-//    }
-//
-//    private byte[] toByteArray(UUID uuid) {
-//        long msb = uuid.getMostSignificantBits();
-//        long lsb = uuid.getLeastSignificantBits();
-//        byte[] buffer = new byte[16];
-//
-//        for (int i = 0; i < 8; i++) {
-//            buffer[i] = (byte) (msb >>> 8 * (7 - i));
-//        }
-//        for (int i = 8; i < 16; i++) {
-//            buffer[i] = (byte) (lsb >>> 8 * (7 - i));
-//        }
-//
-//        return buffer;
-//    }
-
     public List<Account> getAllAccounts(Integer page, Integer size) {
-        if(page<0){
-            page=0;
+        if (page < 0) {
+            page = 0;
         }
-        if(size>1000){
-            size=1000;
+        if (size > MAX_PAGE_SIZE) {
+            size = MAX_PAGE_SIZE;
         }
         return accountRepository.findAll(PageRequest.of(page, size)).getContent();
     }
@@ -113,7 +83,7 @@ public class AccountService {
         // Update account details
         account.setAccountType(updateRequest.getAccountType());
         account.setBalance(updateRequest.getBalance());
-        accountRepository.save(account);  // Save updated account
+        accountRepository.save(account); // Save updated account
 
         // Update user details
         User user = userRepository.findById(account.getUserId())
@@ -123,15 +93,12 @@ public class AccountService {
         user.setPhoneNumber(updateRequest.getPhone());
         user.setCnic(updateRequest.getCnic());
         user.setName(updateRequest.getName());
-        userRepository.save(user);  // Save updated user
+        userRepository.save(user); // Save updated user
     }
 
     public void deleteAccount(long accountId) {
-        Account account=accountRepository.findById(accountId)
+        Account account = accountRepository.findById(accountId)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
-
-//        User user = userRepository.findById(account.getUserId())
-//                .orElseThrow(() -> new RuntimeException("User not found"));
 
         DeletedAccount deletedAccount = new DeletedAccount();
         deletedAccount.setDeletedaccountId(account.getAccountId());
@@ -144,15 +111,13 @@ public class AccountService {
         deletedAccountRepository.save(deletedAccount);
 
         accountRepository.delete(account);
-//        userRepository.delete(user);
-
     }
 
     public void createAccount(AccountCreateRequest accountCreateRequest) {
-        if(userRepository.existsByUsername(accountCreateRequest.getUsername())) {
+        if (userRepository.existsByUsername(accountCreateRequest.getUsername())) {
             throw new RuntimeException("User already registered!");
         }
-        if(userRepository.existsByEmail(accountCreateRequest.getEmail())) {
+        if (userRepository.existsByEmail(accountCreateRequest.getEmail())) {
             throw new RuntimeException("User already registered!");
         }
 
@@ -177,7 +142,5 @@ public class AccountService {
         account.setAccountNumber(generateAccountNumber());
 
         accountRepository.save(account);
-
     }
-
 }

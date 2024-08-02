@@ -9,16 +9,17 @@ import java.util.List;
 
 @RestController
 public class UserController {
+
     @Autowired
     private UserService userService;
 
     @PostMapping("/api/auth/loginCustomer")
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<?> loginCustomer(@RequestBody LoginRequest loginRequest) {
-        try{
-            System.out.println("LOGIN CUSTOMER API CALEDDDDDDD");
+        try {
+            System.out.println("LOGIN CUSTOMER API CALLED");
             ResponseEntity<?> response = userService.loginCustomer(loginRequest);
-                return response;
+            return response;
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -28,13 +29,10 @@ public class UserController {
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<?> loginAdmin(@RequestBody LoginRequest loginRequest) {
         try {
-            System.out.print("Admin login api called");
+            System.out.print("Admin login API called");
             ResponseEntity<?> response = userService.loginAdmin(loginRequest);
-
-            // Return the response directly without modifying it
             return response;
         } catch (Exception e) {
-            // Handle exceptions and return a bad request response with the exception message
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }

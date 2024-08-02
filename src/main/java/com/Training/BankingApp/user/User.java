@@ -30,7 +30,6 @@ public class User implements UserDetails {
     private long phoneNumber;
     private int roleId;
 
-
     @Override
     public String toString() {
         return "User{" +
@@ -40,6 +39,7 @@ public class User implements UserDetails {
                 '}';
     }
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         String roleName = getRoleNameFromRoleId(roleId); // Implement this method to map roleId to a role name
@@ -47,7 +47,7 @@ public class User implements UserDetails {
     }
 
     @Override
-    public String getUsername(){
+    public String getUsername() {
         return email;
     }
 
@@ -70,6 +70,7 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
     private String getRoleNameFromRoleId(int roleId) {
         // Example mapping, adjust as needed
         switch (roleId) {

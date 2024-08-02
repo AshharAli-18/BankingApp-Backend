@@ -6703,3 +6703,291 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/databases/ban
 2024-08-02 14:22:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-08-02 14:22:07 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-08-02 14:22:07 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-08-02 14:51:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 14:51:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-02 14:51:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-08-02 14:52:02 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-02 14:52:02 INFO  c.T.BankingApp.BankingAppApplication - Starting BankingAppApplication using Java 21.0.3 with PID 12848 (D:\Redmath-Training\BankingApp-Backend\target\classes started by ashhar.ali in D:\Redmath-Training\BankingApp-Backend)
+2024-08-02 14:52:02 INFO  c.T.BankingApp.BankingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-02 14:52:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02 14:52:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 7 JPA repository interfaces.
+2024-08-02 14:52:04 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-02 14:52:04 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-08-02 14:52:04 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-02 14:52:04 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-02 14:52:04 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-02 14:52:04 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1611 ms
+2024-08-02 14:52:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-08-02 14:52:04 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@322b09da
+2024-08-02 14:52:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-08-02 14:52:04 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/BankingApp'
+2024-08-02 14:52:05 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 14:52:05 INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-08-02 14:52:05 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 14:52:05 INFO  liquibase.util - UPDATE SUMMARY
+2024-08-02 14:52:05 INFO  liquibase.util - Run:                          0
+2024-08-02 14:52:05 INFO  liquibase.util - Previously run:               0
+2024-08-02 14:52:05 INFO  liquibase.util - Filtered out:                 0
+2024-08-02 14:52:05 INFO  liquibase.util - -------------------------------
+2024-08-02 14:52:05 INFO  liquibase.util - Total change sets:            0
+2024-08-02 14:52:05 INFO  liquibase.util - Update summary generated
+2024-08-02 14:52:05 INFO  liquibase.lockservice - Successfully released change log lock
+2024-08-02 14:52:05 INFO  liquibase.command - Command execution complete
+2024-08-02 14:52:05 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02 14:52:05 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-02 14:52:05 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02 14:52:06 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02 14:52:06 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 14:52:07 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-02 14:52:07 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:52:07 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:52:07 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:52:07 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:52:07 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:52:07 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:52:07 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:52:07 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-08-02 14:52:07 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-02 14:52:07 INFO  c.T.BankingApp.BankingAppApplication - Started BankingAppApplication in 5.887 seconds (process running for 6.503)
+2024-08-02 14:52:55 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02 14:52:55 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-02 14:52:55 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-08-02 14:55:25 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 14:55:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-02 14:55:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-08-02 14:55:28 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-02 14:55:28 INFO  c.T.BankingApp.BankingAppApplication - Starting BankingAppApplication using Java 21.0.3 with PID 11596 (D:\Redmath-Training\BankingApp-Backend\target\classes started by ashhar.ali in D:\Redmath-Training\BankingApp-Backend)
+2024-08-02 14:55:28 INFO  c.T.BankingApp.BankingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-02 14:55:29 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02 14:55:29 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 7 JPA repository interfaces.
+2024-08-02 14:55:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-02 14:55:30 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-08-02 14:55:30 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-02 14:55:30 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-02 14:55:30 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-02 14:55:30 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1686 ms
+2024-08-02 14:55:30 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-08-02 14:55:30 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56c42964
+2024-08-02 14:55:30 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-08-02 14:55:30 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/BankingApp'
+2024-08-02 14:55:31 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 14:55:31 INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-08-02 14:55:31 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 14:55:31 INFO  liquibase.util - UPDATE SUMMARY
+2024-08-02 14:55:31 INFO  liquibase.util - Run:                          0
+2024-08-02 14:55:31 INFO  liquibase.util - Previously run:               0
+2024-08-02 14:55:31 INFO  liquibase.util - Filtered out:                 0
+2024-08-02 14:55:31 INFO  liquibase.util - -------------------------------
+2024-08-02 14:55:31 INFO  liquibase.util - Total change sets:            0
+2024-08-02 14:55:31 INFO  liquibase.util - Update summary generated
+2024-08-02 14:55:31 INFO  liquibase.lockservice - Successfully released change log lock
+2024-08-02 14:55:31 INFO  liquibase.command - Command execution complete
+2024-08-02 14:55:31 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02 14:55:31 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-02 14:55:32 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02 14:55:33 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02 14:55:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 14:55:34 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-02 14:55:34 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:55:34 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:55:34 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:55:34 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:55:34 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:55:34 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:55:34 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:55:34 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-08-02 14:55:34 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-02 14:55:34 INFO  c.T.BankingApp.BankingAppApplication - Started BankingAppApplication in 6.966 seconds (process running for 7.64)
+2024-08-02 14:55:41 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02 14:55:41 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-02 14:55:41 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-08-02 14:56:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 14:56:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-02 14:56:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-08-02 14:56:40 INFO  c.T.BankingApp.BankingAppApplication - Starting BankingAppApplication using Java 21.0.3 with PID 12168 (D:\Redmath-Training\BankingApp-Backend\target\classes started by ashhar.ali in D:\Redmath-Training\BankingApp-Backend)
+2024-08-02 14:56:41 INFO  c.T.BankingApp.BankingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-02 14:56:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02 14:56:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+2024-08-02 14:56:42 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-02 14:56:42 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-02 14:56:42 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-02 14:56:42 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-02 14:56:42 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1397 ms
+2024-08-02 14:56:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-08-02 14:56:42 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68e24e7
+2024-08-02 14:56:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-08-02 14:56:42 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/BankingApp'
+2024-08-02 14:56:43 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 14:56:43 INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-08-02 14:56:43 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 14:56:43 INFO  liquibase.util - UPDATE SUMMARY
+2024-08-02 14:56:43 INFO  liquibase.util - Run:                          0
+2024-08-02 14:56:43 INFO  liquibase.util - Previously run:               0
+2024-08-02 14:56:43 INFO  liquibase.util - Filtered out:                 0
+2024-08-02 14:56:43 INFO  liquibase.util - -------------------------------
+2024-08-02 14:56:43 INFO  liquibase.util - Total change sets:            0
+2024-08-02 14:56:43 INFO  liquibase.util - Update summary generated
+2024-08-02 14:56:43 INFO  liquibase.lockservice - Successfully released change log lock
+2024-08-02 14:56:43 INFO  liquibase.command - Command execution complete
+2024-08-02 14:56:43 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02 14:56:43 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02 14:56:43 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-02 14:56:43 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02 14:56:44 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02 14:56:44 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 14:56:45 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-02 14:56:46 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:56:46 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:56:46 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:56:46 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:56:46 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:56:46 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:56:46 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 14:56:46 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-02 14:56:46 INFO  c.T.BankingApp.BankingAppApplication - Started BankingAppApplication in 5.698 seconds (process running for 6.371)
+2024-08-02 14:56:52 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02 14:56:52 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-02 14:56:52 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2024-08-02 14:59:51 INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 367 ms
+2024-08-02 15:00:28 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-08-02 15:40:06 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 15:40:06 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-02 15:40:06 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-08-02 15:40:12 INFO  c.T.BankingApp.BankingAppApplication - Starting BankingAppApplication using Java 21.0.3 with PID 1352 (D:\Redmath-Training\BankingApp-Backend\target\classes started by ashhar.ali in D:\Redmath-Training\BankingApp-Backend)
+2024-08-02 15:40:12 INFO  c.T.BankingApp.BankingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-02 15:40:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02 15:40:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 7 JPA repository interfaces.
+2024-08-02 15:40:13 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-02 15:40:13 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-02 15:40:13 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-02 15:40:13 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-02 15:40:13 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1414 ms
+2024-08-02 15:40:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-08-02 15:40:13 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@645dc557
+2024-08-02 15:40:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-08-02 15:40:13 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/BankingApp'
+2024-08-02 15:40:14 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 15:40:14 INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-08-02 15:40:14 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 15:40:14 INFO  liquibase.util - UPDATE SUMMARY
+2024-08-02 15:40:14 INFO  liquibase.util - Run:                          0
+2024-08-02 15:40:14 INFO  liquibase.util - Previously run:               0
+2024-08-02 15:40:14 INFO  liquibase.util - Filtered out:                 0
+2024-08-02 15:40:14 INFO  liquibase.util - -------------------------------
+2024-08-02 15:40:14 INFO  liquibase.util - Total change sets:            0
+2024-08-02 15:40:14 INFO  liquibase.util - Update summary generated
+2024-08-02 15:40:14 INFO  liquibase.lockservice - Successfully released change log lock
+2024-08-02 15:40:14 INFO  liquibase.command - Command execution complete
+2024-08-02 15:40:14 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02 15:40:14 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02 15:40:14 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-02 15:40:15 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02 15:40:15 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02 15:40:15 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 15:40:16 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-02 15:40:17 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:40:17 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:40:17 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:40:17 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:40:17 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:40:17 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:40:17 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:40:17 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-02 15:40:17 INFO  c.T.BankingApp.BankingAppApplication - Started BankingAppApplication in 5.671 seconds (process running for 6.319)
+2024-08-02 15:40:21 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02 15:40:21 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-02 15:40:21 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-08-02 15:40:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 15:40:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-02 15:40:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-08-02 15:40:58 INFO  c.T.BankingApp.BankingAppApplication - Starting BankingAppApplication using Java 21.0.3 with PID 9576 (D:\Redmath-Training\BankingApp-Backend\target\classes started by ashhar.ali in D:\Redmath-Training\BankingApp-Backend)
+2024-08-02 15:40:58 INFO  c.T.BankingApp.BankingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-02 15:40:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02 15:40:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 7 JPA repository interfaces.
+2024-08-02 15:41:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-02 15:41:00 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-02 15:41:00 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-02 15:41:00 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-02 15:41:00 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1393 ms
+2024-08-02 15:41:00 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-08-02 15:41:00 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@14be750c
+2024-08-02 15:41:00 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-08-02 15:41:00 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/BankingApp'
+2024-08-02 15:41:01 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 15:41:01 INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-08-02 15:41:01 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 15:41:01 INFO  liquibase.util - UPDATE SUMMARY
+2024-08-02 15:41:01 INFO  liquibase.util - Run:                          0
+2024-08-02 15:41:01 INFO  liquibase.util - Previously run:               0
+2024-08-02 15:41:01 INFO  liquibase.util - Filtered out:                 0
+2024-08-02 15:41:01 INFO  liquibase.util - -------------------------------
+2024-08-02 15:41:01 INFO  liquibase.util - Total change sets:            0
+2024-08-02 15:41:01 INFO  liquibase.util - Update summary generated
+2024-08-02 15:41:01 INFO  liquibase.lockservice - Successfully released change log lock
+2024-08-02 15:41:01 INFO  liquibase.command - Command execution complete
+2024-08-02 15:41:01 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02 15:41:01 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02 15:41:01 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-02 15:41:01 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02 15:41:02 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02 15:41:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 15:41:03 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-02 15:41:03 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:41:03 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:41:03 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:41:03 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:41:03 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:41:03 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:41:03 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 15:41:03 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-02 15:41:03 INFO  c.T.BankingApp.BankingAppApplication - Started BankingAppApplication in 5.611 seconds (process running for 6.24)
+2024-08-02 15:41:08 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02 15:41:08 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-02 15:41:08 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-08-02 16:02:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 16:02:59 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-02 16:02:59 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-08-02 16:03:05 INFO  c.T.BankingApp.BankingAppApplication - Starting BankingAppApplication using Java 21.0.3 with PID 13236 (D:\Redmath-Training\BankingApp-Backend\target\classes started by ashhar.ali in D:\Redmath-Training\BankingApp-Backend)
+2024-08-02 16:03:05 INFO  c.T.BankingApp.BankingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-02 16:03:05 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02 16:03:05 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 7 JPA repository interfaces.
+2024-08-02 16:03:06 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-02 16:03:06 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-02 16:03:06 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-02 16:03:06 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-02 16:03:06 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1390 ms
+2024-08-02 16:03:06 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-08-02 16:03:06 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@211a9647
+2024-08-02 16:03:06 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-08-02 16:03:06 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/BankingApp'
+2024-08-02 16:03:07 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 16:03:07 INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-08-02 16:03:07 INFO  liquibase.changelog - Reading from BankingApp.databasechangelog
+2024-08-02 16:03:07 INFO  liquibase.util - UPDATE SUMMARY
+2024-08-02 16:03:07 INFO  liquibase.util - Run:                          0
+2024-08-02 16:03:07 INFO  liquibase.util - Previously run:               0
+2024-08-02 16:03:07 INFO  liquibase.util - Filtered out:                 0
+2024-08-02 16:03:07 INFO  liquibase.util - -------------------------------
+2024-08-02 16:03:07 INFO  liquibase.util - Total change sets:            0
+2024-08-02 16:03:07 INFO  liquibase.util - Update summary generated
+2024-08-02 16:03:07 INFO  liquibase.lockservice - Successfully released change log lock
+2024-08-02 16:03:07 INFO  liquibase.command - Command execution complete
+2024-08-02 16:03:07 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02 16:03:07 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02 16:03:07 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-02 16:03:08 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02 16:03:09 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02 16:03:09 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02 16:03:09 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-02 16:03:10 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 16:03:10 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 16:03:10 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 16:03:10 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 16:03:10 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 16:03:10 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 16:03:10 WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-02 16:03:10 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-02 16:03:10 INFO  c.T.BankingApp.BankingAppApplication - Started BankingAppApplication in 5.76 seconds (process running for 6.385)
+2024-08-02 16:03:13 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02 16:03:13 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-02 16:03:13 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms

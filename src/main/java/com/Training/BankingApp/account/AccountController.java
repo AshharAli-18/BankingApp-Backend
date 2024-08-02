@@ -35,8 +35,8 @@ public class AccountController {
 
     @GetMapping("/api/getAllAccounts")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public List<Account> getAllAccounts(@RequestParam(name = "page", defaultValue ="0") Integer page,
-                                        @RequestParam(name = "size", defaultValue ="10") Integer size) {
+    public List<Account> getAllAccounts(@RequestParam(name = "page", defaultValue = "0") Integer page,
+                                        @RequestParam(name = "size", defaultValue = "10") Integer size) {
         return accountService.getAllAccounts(page, size);
     }
 
@@ -58,6 +58,7 @@ public class AccountController {
     @PreAuthorize("hasRole('ROLE_CUSTOMER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<?> registration(@RequestBody AccountCreateRequest accountCreateRequest) {
         try {
+
             accountService.createAccount(accountCreateRequest);
             return ResponseEntity.ok("Account Created Successfully!");
         } catch (Exception e) {

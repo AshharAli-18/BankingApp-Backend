@@ -1,9 +1,9 @@
 package com.Training.BankingApp.transfer;
 
 import com.Training.BankingApp.account.Account;
+import com.Training.BankingApp.account.AccountRepository;
 import com.Training.BankingApp.otp.OtpService;
 import com.Training.BankingApp.transaction.Transaction;
-import com.Training.BankingApp.account.AccountRepository;
 import com.Training.BankingApp.transaction.TransactionRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +15,7 @@ import java.util.List;
 
 @Service
 public class TransferService {
+
     @Autowired
     private TransferRepository transferRepository;
 
@@ -26,7 +27,6 @@ public class TransferService {
 
     @Autowired
     private OtpService otpService;
-
 
     @Transactional
     public void transfer(Long fromAccountId, String toAccountNumber, long amount, String otp, String email) {
@@ -77,7 +77,7 @@ public class TransferService {
         Transaction transactionReceiver = new Transaction();
         transactionReceiver.setTransactionId(transactionIdReceiver);
         transactionReceiver.setAccountId(toAccount.getAccountId());
-        transactionReceiver.setToAccountNumber(fromAccount.getAccountNumber());
+        transactionReceiver.setToAccountNumber(toAccount.getAccountNumber());
         transactionReceiver.setAmount(amount);
         transactionReceiver.setDate(LocalDate.now());
         transactionReceiver.setCreditDebit("CR");
@@ -86,13 +86,12 @@ public class TransferService {
         transactionRepository.save(transactionReceiver);
     }
 
-
     public List<Transfer> getAllTransfers(Integer page, Integer size) {
-        if(page<0){
-            page=0;
+        if (page < 0) {
+            page = 0;
         }
-        if(size>1000){
-            size=1000;
+        if (size > 1000) {
+            size = 1000;
         }
         return transferRepository.findAll(PageRequest.of(page, size)).getContent();
     }

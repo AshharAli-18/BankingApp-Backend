@@ -14,12 +14,11 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-
 @Service
 public class UserService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
-    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
     @Autowired
     private UserRepository userRepository;
 
@@ -30,16 +29,16 @@ public class UserService {
     private AccountRepository accountRepository;
 
     public ResponseEntity<?> loginCustomer(@org.jetbrains.annotations.NotNull LoginRequest loginRequest) {
-        User user = new User();
-        user=userRepository.findOneByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());
+        User user = userRepository.findOneByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());
 
-        if(user==null) {
-               return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
-        if(user.getRoleId()!=2L) {
+        if (user.getRoleId() != 2L) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid role");
         }
-        var jwt=jwtService.generateToken(user);
+
+        String jwt = jwtService.generateToken(user);
 
         JWTAuthenticationResponse jwtAuthenticationResponse = new JWTAuthenticationResponse();
         jwtAuthenticationResponse.setToken(jwt);
@@ -54,17 +53,16 @@ public class UserService {
     }
 
     public ResponseEntity<?> loginAdmin(@org.jetbrains.annotations.NotNull LoginRequest loginRequest) {
-        User user = new User();
-        user=userRepository.findOneByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());
+        User user = userRepository.findOneByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());
 
-        if(user==null) {
+        if (user == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
-        if(user.getRoleId()!=1L) {
+        if (user.getRoleId() != 1L) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid role");
         }
 
-        var jwt=jwtService.generateToken(user);
+        String jwt = jwtService.generateToken(user);
 
         JWTAuthenticationResponse jwtAuthenticationResponse = new JWTAuthenticationResponse();
         jwtAuthenticationResponse.setToken(jwt);
@@ -76,31 +74,28 @@ public class UserService {
         jwtAuthenticationResponse.setLoggedIn(true);
 
         return ResponseEntity.ok(jwtAuthenticationResponse);
-
     }
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public UserDetailsService userDetailsService(){
-        return new UserDetailsService(){
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsService() {
             @Override
             public UserDetails loadUserByUsername(String username) {
                 return userRepository.findByEmail(username)
-                        .orElseThrow(()-> new UsernameNotFoundException("User not found!"));
+                        .orElseThrow(() -> new UsernameNotFoundException("User not found!"));
             }
         };
     }
 
     public User getUserByUserId(long userId) {
-        User user=userRepository.findByUserId(userId);
-        if(user!=null){
+        User user = userRepository.findByUserId(userId);
+        if (user != null) {
             return user;
-        }
-        else {
+        } else {
             return null;
         }
     }
-
 }

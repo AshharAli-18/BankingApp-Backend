@@ -12,12 +12,14 @@ public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
 
+    private static final int MAX_PAGE_SIZE = 1000;
+
     public List<Transaction> getAllTransactions(Integer page, Integer size) {
-        if(page<0){
-            page=0;
+        if (page < 0) {
+            page = 0;
         }
-        if(size>1000){
-            size=1000;
+        if (size > MAX_PAGE_SIZE) {
+            size = MAX_PAGE_SIZE;
         }
         return transactionRepository.findAll(PageRequest.of(page, size)).getContent();
     }
@@ -29,6 +31,4 @@ public class TransactionService {
     public List<Transaction> getAllByTransferId(long transferId) {
         return transactionRepository.findByTransferId(transferId);
     }
-
-
 }
