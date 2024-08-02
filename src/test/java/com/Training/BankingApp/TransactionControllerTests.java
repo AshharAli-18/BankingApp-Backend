@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -18,6 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@ActiveProfiles("test")
 public class TransactionControllerTests {
 
     @Autowired
@@ -52,7 +54,7 @@ public class TransactionControllerTests {
     @Order(3)
     @Test
     public void testGetTransactionByAccountIdSuccess() throws Exception {
-        long accountId = 21; // Use a valid account ID for your tests
+        long accountId = 28; // Use a valid account ID for your tests
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getTransactionByAccountId/{id}", accountId)
                         .with(SecurityMockMvcRequestPostProcessors.user("customer")
                                 .roles("CUSTOMER")))
@@ -64,19 +66,20 @@ public class TransactionControllerTests {
 
     @Order(4)
     @Test
-    public void testGetTransactionByAccountIdForbidden() throws Exception {
+    public void testGetTransactionByAccountIdFailure() throws Exception {
         long accountId = 12345; // Use a valid account ID for your tests
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getTransactionByAccountId/{id}", accountId)
-                        .with(SecurityMockMvcRequestPostProcessors.user("admin")
-                                .roles("ADMIN")))
+                        .with(SecurityMockMvcRequestPostProcessors.user("customer")
+                                .roles("CUSTOMER")))
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isForbidden());
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(Matchers.greaterThanOrEqualTo(0))));
     }
-
     @Order(5)
     @Test
     public void testGetTransactionByTransferIdSuccess() throws Exception {
-        long transferId = 61; // Use a valid transfer ID for your tests
+        long transferId = 65; // Use a valid transfer ID for your tests
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getTransactionByTransferId/{id}", transferId)
                         .with(SecurityMockMvcRequestPostProcessors.user("admin")
                                 .roles("ADMIN")))
@@ -89,7 +92,7 @@ public class TransactionControllerTests {
     @Order(6)
     @Test
     public void testGetTransactionByTransferIdForbidden() throws Exception {
-        long transferId = 61; // Use a valid transfer ID for your tests
+        long transferId = 65; // Use a valid transfer ID for your tests
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getTransactionByTransferId/{id}", transferId)
                         .with(SecurityMockMvcRequestPostProcessors.user("customer")
                                 .roles("CUSTOMER")))

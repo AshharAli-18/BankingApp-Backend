@@ -1,15 +1,10 @@
 package com.Training.BankingApp.otp;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-//import javax.mail.MessagingException;
-//import javax.mail.internet.MimeMessage;
-//import java.io.File;
 
 @Service
 public class EmailSenderService {
@@ -26,7 +21,6 @@ public class EmailSenderService {
         message.setText(body);
         message.setSubject(subject);
         mailSender.send(message);
-        System.out.println("Mail Send...");
 
 
     }

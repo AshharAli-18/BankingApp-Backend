@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -18,6 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@ActiveProfiles("test")
 public class AccountControllerTests {
 
     @Autowired
@@ -26,7 +28,7 @@ public class AccountControllerTests {
     @Order(1)
     @Test
     public void testGetAccountSuccess() throws Exception {
-        long accountId = 30; // Use a valid account ID for your tests
+        long accountId = 24; // Use a valid account ID for your tests
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getAccount/{accountId}", accountId)
                         .with(SecurityMockMvcRequestPostProcessors.user("customer")
                                 .roles("CUSTOMER")))

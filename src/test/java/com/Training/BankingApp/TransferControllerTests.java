@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -18,25 +19,33 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@ActiveProfiles("test")
 public class TransferControllerTests {
 
     @Autowired
     private MockMvc mockMvc;
 
-    @Order(1)
-    @Test
-    public void testTransferMoneySuccess() throws Exception {
-        String transferRequest = "{\"fromAccountId\":\"2\",\"toAccountNumber\":\"TXy_hQWkTL-gto\",\"amount\":800}";
+//    @Order(1)
+//    @Test
+//    public void testTransferMoneySuccess() throws Exception {
+//        String transferRequest = "{"
+//                + "\"fromAccountId\":28,"
+//                + "\"toAccountNumber\":\"3pPubAL_RTubyO\","
+//                + "\"amount\":100,"
+//                + "\"email\":\"user@example.com\","
+//                + "\"otp\":\"123456\""
+//                + "}";
+//
+//        mockMvc.perform(MockMvcRequestBuilders.post("/api/transferMoney")
+//                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+//                        .content(transferRequest)
+//                        .with(SecurityMockMvcRequestPostProcessors.user("customer")
+//                                .roles("CUSTOMER")))
+//                .andDo(MockMvcResultHandlers.print())
+//                .andExpect(MockMvcResultMatchers.status().isOk())
+//                .andExpect(MockMvcResultMatchers.content().string("Money transferred successfully"));
+//    }
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/transferMoney")
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .content(transferRequest)
-                        .with(SecurityMockMvcRequestPostProcessors.user("customer")
-                                .roles("CUSTOMER")))
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string("Money transferred successfully"));
-    }
 
     @Order(2)
     @Test

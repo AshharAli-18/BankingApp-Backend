@@ -3,7 +3,15 @@ package com.Training.BankingApp.account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
@@ -19,16 +27,16 @@ public class AccountController {
         return accountService.getAccount(accountId);
     }
 
-    @GetMapping("/api/getAccoutByUserId/{userId}")
-    @PreAuthorize("hasRole('ROLE_CUSTOMER')or hasRole('ROLE_ADMIN')")
-    public Account getAccuntByUserId(@PathVariable("userId") long userId) {
+    @GetMapping("/api/getAccountByUserId/{userId}")
+    @PreAuthorize("hasRole('ROLE_CUSTOMER') or hasRole('ROLE_ADMIN')")
+    public Account getAccountByUserId(@PathVariable("userId") long userId) {
         return accountService.getAccountByUserId(userId);
     }
 
     @GetMapping("/api/getAllAccounts")
-//    @CrossOrigin(origins = "http://localhost:3000")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public List<Account> getAllAccounts(@RequestParam(name = "page", defaultValue ="0")Integer page, @RequestParam(name = "size", defaultValue ="10")Integer size) {
+    public List<Account> getAllAccounts(@RequestParam(name = "page", defaultValue ="0") Integer page,
+                                        @RequestParam(name = "size", defaultValue ="10") Integer size) {
         return accountService.getAllAccounts(page, size);
     }
 
@@ -49,11 +57,10 @@ public class AccountController {
     @PostMapping("/api/admin/createAccount")
     @PreAuthorize("hasRole('ROLE_CUSTOMER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<?> registration(@RequestBody AccountCreateRequest accountCreateRequest) {
-        try{
-
+        try {
             accountService.createAccount(accountCreateRequest);
             return ResponseEntity.ok("Account Created Successfully!");
-        }catch (Exception e){
+        } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }

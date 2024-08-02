@@ -1,10 +1,10 @@
 package com.Training.BankingApp.account;
 
-import com.Training.BankingApp.transaction.Transaction;
+import com.Training.BankingApp.deletedaccount.DeletedAccountRepository;
 import com.Training.BankingApp.transaction.TransactionRepository;
-import com.Training.BankingApp.transfer.Transfer;
 import com.Training.BankingApp.transfer.TransferRepository;
 import com.Training.BankingApp.user.User;
+import com.Training.BankingApp.deletedaccount.DeletedAccount;
 import com.Training.BankingApp.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -12,9 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.time.LocalDate;
-import java.util.Base64;
 import java.util.List;
-import java.util.UUID;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,6 +27,8 @@ public class AccountService {
     private TransactionRepository transactionRepository;
     @Autowired
     private TransferRepository transferRepository;
+    @Autowired
+    private DeletedAccountRepository deletedAccountRepository;
 
     private static final String PREFIX = "MB";
     private static final int NUMBER_LENGTH = 8;
@@ -130,17 +130,21 @@ public class AccountService {
         Account account=accountRepository.findById(accountId)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
 
-        User user = userRepository.findById(account.getUserId())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+//        User user = userRepository.findById(account.getUserId())
+//                .orElseThrow(() -> new RuntimeException("User not found"));
 
-        List<Transaction> transaction=transactionRepository.findByAccountId(accountId);
-
-        List<Transfer> transfer=transferRepository.findByFromAccountId(accountId);
+        DeletedAccount deletedAccount = new DeletedAccount();
+        deletedAccount.setDeletedaccountId(account.getAccountId());
+        deletedAccount.setAccountNumber(account.getAccountNumber());
+        deletedAccount.setUser(account.getUser());
+        deletedAccount.setAccountType(account.getAccountType());
+        deletedAccount.setBalance(account.getBalance());
+        deletedAccount.setOpeningDate(account.getOpeningDate());
+        deletedAccount.setUserId(account.getUserId());
+        deletedAccountRepository.save(deletedAccount);
 
         accountRepository.delete(account);
-        userRepository.delete(user);
-        transferRepository.deleteAll(transfer);
-        transactionRepository.deleteAll(transaction);
+//        userRepository.delete(user);
 
     }
 
