@@ -30,4 +30,13 @@ public class Account {
     private long balance;
     private LocalDate openingDate;
 
+
+    public User getUser() {
+        return user == null ? null : new User(this.user); // Return a copy of the user if not null
+    }
+
+    public void setUser(User user) {
+        this.user = user == null ? null : new User(user); // Store a copy of the user if not null
+    }
+
 }

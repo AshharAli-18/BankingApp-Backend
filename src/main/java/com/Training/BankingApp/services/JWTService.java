@@ -15,10 +15,14 @@ import java.util.function.Function;
 @Service
 public class JWTService {
 
+    private static final long TOKEN_VALIDITY = 1000 * 60 * 30; // 30 minutes
+    private static final String SECRET_KEY = "A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6";
+
     public String generateToken(UserDetails userDetails) {
-        return Jwts.builder().setSubject(userDetails.getUsername())
+        return Jwts.builder()
+                .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30))
+                .setExpiration(new Date(System.currentTimeMillis() + TOKEN_VALIDITY))
                 .signWith(getSignKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
@@ -26,11 +30,10 @@ public class JWTService {
     private <T> T extractClaim(String token, Function<Claims, T> claimResolvers) {
         final Claims claims = extractAllClaims(token);
         return claimResolvers.apply(claims);
-
     }
 
     private Key getSignKey() {
-        byte[] key = Decoders.BASE64.decode("A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6");
+        byte[] key = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(key);
     }
 
@@ -51,8 +54,3 @@ public class JWTService {
         return extractClaim(token, Claims::getExpiration).before(new Date());
     }
 }
-
-
-
-
-

@@ -17,9 +17,11 @@ public class TransactionController {
 
     @GetMapping("/api/getAllTransactions")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public List<Transaction> getAllTransactions(@RequestParam(name = "page", defaultValue ="0")Integer page, @RequestParam(name = "size", defaultValue ="10")Integer size) {
+    public List<Transaction> getAllTransactions(@RequestParam(name = "page", defaultValue = "0") Integer page,
+                                                @RequestParam(name = "size", defaultValue = "10") Integer size) {
         return transactionService.getAllTransactions(page, size);
     }
+
 
     @GetMapping("/api/getTransactionByAccountId/{id}")
     @PreAuthorize("hasRole('ROLE_CUSTOMER') or hasRole('ROLE_ADMIN')")

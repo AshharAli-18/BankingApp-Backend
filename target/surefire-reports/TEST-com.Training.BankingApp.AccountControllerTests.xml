@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.Training.BankingApp.UserControllerTests" time="0.203" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.Training.BankingApp.AccountControllerTests" time="8.285" tests="8" errors="1" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -50,7 +50,7 @@
     <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-21/issues/"/>
     <property name="java.io.tmpdir" value="C:\Users\ashhar.ali\AppData\Local\Temp\"/>
     <property name="idea.version" value="2024.1.4"/>
-    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.3"/>
     <property name="user.dir" value="D:\Redmath-Training\BankingApp-Backend"/>
     <property name="os.arch" value="amd64"/>
@@ -68,183 +68,69 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[BankingApp] "/>
   </properties>
-  <testcase name="testLoginCustomerSuccess" classname="com.Training.BankingApp.UserControllerTests" time="0.118">
-    <system-out><![CDATA[2024-08-05T15:33:47.338+05:00  INFO 11156 --- [BankingApp] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.Training.BankingApp.UserControllerTests]: UserControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-08-05T15:33:47.347+05:00  INFO 11156 --- [BankingApp] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.Training.BankingApp.BankingAppApplication for test class com.Training.BankingApp.UserControllerTests
-LOGIN CUSTOMER API CALLED
+  <testcase name="testGetAccountSuccess" classname="com.Training.BankingApp.AccountControllerTests" time="0.722">
+    <system-out><![CDATA[15:33:36.477 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.Training.BankingApp.AccountControllerTests]: AccountControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:33:36.623 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.Training.BankingApp.BankingAppApplication for test class com.Training.BankingApp.AccountControllerTests
 
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/loginCustomer
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"47"]
-             Body = {"email":"sheikh@gmail.com","password":"12345"}
-    Session Attrs = {}
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
 
-Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#loginCustomer(LoginRequest)
+ :: Spring Boot ::                (v3.3.1)
 
-Async:
-    Async started = false
-     Async result = null
+2024-08-05T15:33:37.241+05:00  INFO 11156 --- [BankingApp] [           main] c.T.BankingApp.AccountControllerTests    : Starting AccountControllerTests using Java 21.0.3 with PID 11156 (started by ashhar.ali in D:\Redmath-Training\BankingApp-Backend)
+2024-08-05T15:33:37.243+05:00  INFO 11156 --- [BankingApp] [           main] c.T.BankingApp.AccountControllerTests    : The following 1 profile is active: "test"
+2024-08-05T15:33:38.544+05:00  INFO 11156 --- [BankingApp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-05T15:33:38.617+05:00  INFO 11156 --- [BankingApp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 7 JPA repository interfaces.
+2024-08-05T15:33:39.212+05:00  INFO 11156 --- [BankingApp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-05T15:33:39.558+05:00  INFO 11156 --- [BankingApp] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:C:/databases/bankingapp user=TEST
+2024-08-05T15:33:39.560+05:00  INFO 11156 --- [BankingApp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-05T15:33:40.088+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-08-05T15:33:40.109+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-08-05T15:33:40.111+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-08-05T15:33:40.128+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.util                           : UPDATE SUMMARY
+2024-08-05T15:33:40.129+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.util                           : Run:                          0
+2024-08-05T15:33:40.129+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.util                           : Previously run:               0
+2024-08-05T15:33:40.129+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.util                           : Filtered out:                 0
+2024-08-05T15:33:40.129+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.util                           : -------------------------------
+2024-08-05T15:33:40.129+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.util                           : Total change sets:            0
+2024-08-05T15:33:40.130+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.util                           : Update summary generated
+2024-08-05T15:33:40.151+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.lockservice                    : Successfully released change log lock
+2024-08-05T15:33:40.153+05:00  INFO 11156 --- [BankingApp] [           main] liquibase.command                        : Command execution complete
+2024-08-05T15:33:40.251+05:00  INFO 11156 --- [BankingApp] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-05T15:33:40.317+05:00  INFO 11156 --- [BankingApp] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-05T15:33:40.367+05:00  INFO 11156 --- [BankingApp] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-05T15:33:40.730+05:00  INFO 11156 --- [BankingApp] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-05T15:33:41.811+05:00  INFO 11156 --- [BankingApp] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-05T15:33:41.814+05:00  INFO 11156 --- [BankingApp] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-05T15:33:42.517+05:00  INFO 11156 --- [BankingApp] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-05T15:33:43.244+05:00  INFO 11156 --- [BankingApp] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:C:/databases/bankingapp'
+2024-08-05T15:33:43.283+05:00  WARN 11156 --- [BankingApp] [           main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-05T15:33:43.283+05:00  WARN 11156 --- [BankingApp] [           main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/v3/api-docs', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-05T15:33:43.284+05:00  WARN 11156 --- [BankingApp] [           main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/v3/api-docs/**', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-05T15:33:43.284+05:00  WARN 11156 --- [BankingApp] [           main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/index.html', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-05T15:33:43.284+05:00  WARN 11156 --- [BankingApp] [           main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/index.js', GET]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-05T15:33:43.284+05:00  WARN 11156 --- [BankingApp] [           main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-05T15:33:43.284+05:00  WARN 11156 --- [BankingApp] [           main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/swagger-ui/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-05T15:33:43.354+05:00  INFO 11156 --- [BankingApp] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-05T15:33:43.355+05:00  INFO 11156 --- [BankingApp] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-05T15:33:43.356+05:00  INFO 11156 --- [BankingApp] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-08-05T15:33:43.378+05:00  INFO 11156 --- [BankingApp] [           main] c.T.BankingApp.AccountControllerTests    : Started AccountControllerTests in 6.584 seconds (process running for 8.108)
 
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 200
-    Error message = null
-          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
-     Content type = application/json
-             Body = {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVpa2hAZ21haWwuY29tIiwiaWF0IjoxNzIyODU0MDI3LCJleHAiOjE3MjI4NTU4Mjd9.b8fErbz5pLkm8StRnIDbPg-uY8K4nF5mu20ffavP3BM","userId":45,"username":"sheikh@gmail.com","email":"sheikh@gmail.com","phoneNumber":3129930485,"roleId":2,"loggedIn":true}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginCustomerFailure" classname="com.Training.BankingApp.UserControllerTests" time="0.011">
-    <system-out><![CDATA[LOGIN CUSTOMER API CALLED
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/loginCustomer
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"49"]
-             Body = {"username":"ashae@gmail.com","password":"12345"}
-    Session Attrs = {}
-
-Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#loginCustomer(LoginRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 401
-    Error message = null
-          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"25", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
-     Content type = text/plain;charset=UTF-8
-             Body = Invalid email or password
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginAdminSuccess" classname="com.Training.BankingApp.UserControllerTests" time="0.01">
-    <system-out><![CDATA[Admin login API called
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/loginAdmin
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"46"]
-             Body = {"email":"usama@gmail.com","password":"12345"}
-    Session Attrs = {}
-
-Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#loginAdmin(LoginRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 200
-    Error message = null
-          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
-     Content type = application/json
-             Body = {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2FtYUBnbWFpbC5jb20iLCJpYXQiOjE3MjI4NTQwMjcsImV4cCI6MTcyMjg1NTgyN30.HyUcNtdbSGTEByOdQ-79yKGWMWAj3dMCqtFzvboXu8A","userId":1,"username":"usama@gmail.com","email":"usama@gmail.com","phoneNumber":923014667645,"roleId":1,"loggedIn":true}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginAdminFailure" classname="com.Training.BankingApp.UserControllerTests" time="0.009">
-    <system-out><![CDATA[Admin login API called
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/loginAdmin
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"47"]
-             Body = {"email":"usama@gmail.com","password":"123456"}
-    Session Attrs = {}
-
-Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#loginAdmin(LoginRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 401
-    Error message = null
-          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"25", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
-     Content type = text/plain;charset=UTF-8
-             Body = Invalid email or password
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testGetUsersSuccess" classname="com.Training.BankingApp.UserControllerTests" time="0.014">
-    <system-out><![CDATA[
 MockHttpServletRequest:
       HTTP Method = GET
-      Request URI = /api/getUsers
+      Request URI = /api/getAccount/24
        Parameters = {}
           Headers = []
              Body = null
     Session Attrs = {}
 
 Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#getUsers()
+             Type = com.Training.BankingApp.account.AccountController
+           Method = com.Training.BankingApp.account.AccountController#getAccount(long)
 
 Async:
     Async started = false
@@ -266,25 +152,440 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = [{"userId":1,"name":null,"address":null,"cnic":null,"username":"usama@gmail.com","password":"12345","email":"usama@gmail.com","phoneNumber":923014667645,"roleId":1,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":39,"name":"malikk","address":"lahore","cnic":"12345-6789012-9","username":"malik@gmail.com","password":"12345","email":"malik@gmail.com","phoneNumber":1234567,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":43,"name":"Ahmed","address":"Lahore","cnic":"35202-2369258-0","username":"ahmed@gmail.com","password":"12345","email":"ahmed@gmail.com","phoneNumber":1234567,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":45,"name":"Sheikh","address":"Lahore","cnic":"35202-239084-4","username":"sheikh@gmail.com","password":"12345","email":"sheikh@gmail.com","phoneNumber":3129930485,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":49,"name":"usman","address":"Lahore","cnic":"35202-2394859-4","username":"usman@gmail.com","password":"12345","email":"usman@gmail.com","phoneNumber":3014443093,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":51,"name":"Ashhar","address":"Lahore","cnic":"35202-2395843-2","username":"iashharali.18@gmail.com","password":"12345","email":"iashharali.18@gmail.com","phoneNumber":3124985764,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":52,"name":"New User","address":"789 New St","cnic":"1234567890125","username":"newuser@example.com","password":"password456","email":"newuser@example.com","phoneNumber":1234567890,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true}]
+             Body = {"accountId":24,"user":{"userId":39,"name":"malikk","address":"lahore","cnic":"12345-6789012-9","username":"malik@gmail.com","password":"12345","email":"malik@gmail.com","phoneNumber":1234567,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},"userId":39,"accountNumber":"CMrSkI58Qd2tBt","accountType":"Current","balance":23300,"openingDate":"2024-07-27"}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
 ]]></system-out>
+    <system-err><![CDATA[SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@22e357dc]
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@49912c99]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [ch.qos.logback.classic.spi.LogbackServiceProvider@22e357dc]
+WARNING: A Java agent has been loaded dynamically (C:\Users\ashhar.ali\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.17\byte-buddy-agent-1.14.17.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
   </testcase>
-  <testcase name="testGetUsersForbidden" classname="com.Training.BankingApp.UserControllerTests" time="0.007">
+  <testcase name="testGetAccountByUserIdSuccess" classname="com.Training.BankingApp.AccountControllerTests" time="0.026">
+    <failure message="Status expected:&lt;200&gt; but was:&lt;404&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<200> but was:<404>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.Training.BankingApp.AccountControllerTests.testGetAccountByUserIdSuccess(AccountControllerTests.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
     <system-out><![CDATA[
 MockHttpServletRequest:
       HTTP Method = GET
-      Request URI = /api/getUsers
+      Request URI = /api/getAccoutByUserId/39
        Parameters = {}
           Headers = []
              Body = null
     Session Attrs = {}
 
 Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#getUsers()
+             Type = org.springframework.web.servlet.resource.ResourceHttpRequestHandler
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.servlet.resource.NoResourceFoundException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = No static resource api/getAccoutByUserId/39.
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/getAccoutByUserId/39
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = org.springframework.web.servlet.resource.ResourceHttpRequestHandler
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.servlet.resource.NoResourceFoundException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = No static resource api/getAccoutByUserId/39.
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testGetAllAccountsSuccess" classname="com.Training.BankingApp.AccountControllerTests" time="0.164">
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/getAllAccounts
+       Parameters = {page=[0], size=[10]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.account.AccountController
+           Method = com.Training.BankingApp.account.AccountController#getAllAccounts(Integer, Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = [{"accountId":24,"user":{"userId":39,"name":"malikk","address":"lahore","cnic":"12345-6789012-9","username":"malik@gmail.com","password":"12345","email":"malik@gmail.com","phoneNumber":1234567,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},"userId":39,"accountNumber":"CMrSkI58Qd2tBt","accountType":"Current","balance":23300,"openingDate":"2024-07-27"},{"accountId":28,"user":{"userId":43,"name":"Ahmed","address":"Lahore","cnic":"35202-2369258-0","username":"ahmed@gmail.com","password":"12345","email":"ahmed@gmail.com","phoneNumber":1234567,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},"userId":43,"accountNumber":"b2l6SvnkRjCknh","accountType":"Current","balance":24800,"openingDate":"2024-07-28"},{"accountId":30,"user":{"userId":45,"name":"Sheikh","address":"Lahore","cnic":"35202-239084-4","username":"sheikh@gmail.com","password":"12345","email":"sheikh@gmail.com","phoneNumber":3129930485,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},"userId":45,"accountNumber":"3pPubAL_RTubyO","accountType":"Current","balance":12400,"openingDate":"2024-07-28"},{"accountId":34,"user":{"userId":49,"name":"usman","address":"Lahore","cnic":"35202-2394859-4","username":"usman@gmail.com","password":"12345","email":"usman@gmail.com","phoneNumber":3014443093,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},"userId":49,"accountNumber":"KduAGttLSjatTZ","accountType":"Saving","balance":500,"openingDate":"2024-07-30"},{"accountId":36,"user":{"userId":51,"name":"Ashhar","address":"Lahore","cnic":"35202-2395843-2","username":"iashharali.18@gmail.com","password":"12345","email":"iashharali.18@gmail.com","phoneNumber":3124985764,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},"userId":51,"accountNumber":"1Lc-na4QTUeQd1","accountType":"Current","balance":9700,"openingDate":"2024-07-31"},{"accountId":37,"user":{"userId":52,"name":"New User","address":"789 New St","cnic":"1234567890125","username":"newuser@example.com","password":"password456","email":"newuser@example.com","phoneNumber":1234567890,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},"userId":52,"accountNumber":"MB03161149","accountType":"Savings","balance":0,"openingDate":"2024-08-02"}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testGetAllAccountsForbidden" classname="com.Training.BankingApp.AccountControllerTests" time="0.023">
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/getAllAccounts
+       Parameters = {page=[0], size=[10]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.account.AccountController
+           Method = com.Training.BankingApp.account.AccountController#getAllAccounts(Integer, Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteAccountSuccess" classname="com.Training.BankingApp.AccountControllerTests" time="0.018">
+    <error message="Request processing failed: java.lang.RuntimeException: Account not found" type="jakarta.servlet.ServletException"><![CDATA[jakarta.servlet.ServletException: Request processing failed: java.lang.RuntimeException: Account not found
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.Training.BankingApp.config.JWTAuthenticationFilter.doFilterInternal(JWTAuthenticationFilter.java:37)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at com.Training.BankingApp.AccountControllerTests.testDeleteAccountSuccess(AccountControllerTests.java:83)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.RuntimeException: Account not found
+	at com.Training.BankingApp.account.AccountService.lambda$deleteAccount$2(AccountService.java:101)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.Training.BankingApp.account.AccountService.deleteAccount(AccountService.java:101)
+	at com.Training.BankingApp.account.AccountController.deleteAccount(AccountController.java:54)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.proceed(AuthorizationManagerBeforeMethodInterceptor.java:269)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:264)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197)
+	at org.springframework.security.config.annotation.method.configuration.PrePostMethodSecurityConfiguration$DeferringMethodInterceptor.invoke(PrePostMethodSecurityConfiguration.java:200)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.Training.BankingApp.account.AccountController$$SpringCGLIB$$0.deleteAccount(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	... 77 more
+]]></error>
+  </testcase>
+  <testcase name="testCreateAccountSuccess" classname="com.Training.BankingApp.AccountControllerTests" time="0.125">
+    <failure message="Status expected:&lt;200&gt; but was:&lt;400&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<200> but was:<400>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.Training.BankingApp.AccountControllerTests.testCreateAccountSuccess(AccountControllerTests.java:111)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/admin/createAccount
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"206"]
+             Body = {"accountType":"Savings","balance":20000,"username":"newuser","email":"newuser@example.com","phoneNumber":1234567890,"name":"New User","password":"password456","address":"789 New St","cnic":"1234567890125"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.account.AccountController
+           Method = com.Training.BankingApp.account.AccountController#registration(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"24", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = text/plain;charset=UTF-8
+             Body = User already registered!
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/admin/createAccount
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"206"]
+             Body = {"accountType":"Savings","balance":20000,"username":"newuser","email":"newuser@example.com","phoneNumber":1234567890,"name":"New User","password":"password456","address":"789 New St","cnic":"1234567890125"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.account.AccountController
+           Method = com.Training.BankingApp.account.AccountController#registration(AccountCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"24", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = text/plain;charset=UTF-8
+             Body = User already registered!
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateAccountForbidden" classname="com.Training.BankingApp.AccountControllerTests" time="0.014">
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /api/admin/updateAccount/1
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"226"]
+             Body = {"accountType":"Checking","balance":15000,"username":"updateduser","email":"updateduser@example.com","phoneNumber":9876543210,"name":"Updated User","password":"newpassword123","address":"456 Updated St","cnic":"1234567890124"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.account.AccountController
+           Method = com.Training.BankingApp.account.AccountController#updateAccount(Long, AccountUpdateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteAccountForbidden" classname="com.Training.BankingApp.AccountControllerTests" time="0.011">
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /api/admin/deleteAccount/1
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.account.AccountController
+           Method = com.Training.BankingApp.account.AccountController#deleteAccount(Long)
 
 Async:
     Async started = false

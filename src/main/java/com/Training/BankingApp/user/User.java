@@ -30,15 +30,31 @@ public class User implements UserDetails {
     private long phoneNumber;
     private int roleId;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + userId +
-                ", email='" + email + '\'' +
-                ", roleId=" + roleId +
-                '}';
+    // Default constructor
+    public User() {
     }
 
+    // Copy constructor
+    public User(User user) {
+        this.userId = user.userId;
+        this.name = user.name;
+        this.address = user.address;
+        this.cnic = user.cnic;
+        this.username = user.username;
+        this.password = user.password;
+        this.email = user.email;
+        this.phoneNumber = user.phoneNumber;
+        this.roleId = user.roleId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{"
+                + "id=" + userId
+                + ", email='" + email + '\''
+                + ", roleId=" + roleId
+                + '}';
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

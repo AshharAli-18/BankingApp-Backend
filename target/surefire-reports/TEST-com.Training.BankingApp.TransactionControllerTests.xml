@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.Training.BankingApp.UserControllerTests" time="0.203" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.Training.BankingApp.TransactionControllerTests" time="0.216" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -68,22 +68,21 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[BankingApp] "/>
   </properties>
-  <testcase name="testLoginCustomerSuccess" classname="com.Training.BankingApp.UserControllerTests" time="0.118">
-    <system-out><![CDATA[2024-08-05T15:33:47.338+05:00  INFO 11156 --- [BankingApp] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.Training.BankingApp.UserControllerTests]: UserControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-08-05T15:33:47.347+05:00  INFO 11156 --- [BankingApp] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.Training.BankingApp.BankingAppApplication for test class com.Training.BankingApp.UserControllerTests
-LOGIN CUSTOMER API CALLED
+  <testcase name="testGetAllTransactionsSuccess" classname="com.Training.BankingApp.TransactionControllerTests" time="0.029">
+    <system-out><![CDATA[2024-08-05T15:33:46.981+05:00  INFO 11156 --- [BankingApp] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.Training.BankingApp.TransactionControllerTests]: TransactionControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-05T15:33:46.990+05:00  INFO 11156 --- [BankingApp] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.Training.BankingApp.BankingAppApplication for test class com.Training.BankingApp.TransactionControllerTests
 
 MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/loginCustomer
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"47"]
-             Body = {"email":"sheikh@gmail.com","password":"12345"}
+      HTTP Method = GET
+      Request URI = /api/getAllTransactions
+       Parameters = {page=[0], size=[10]}
+          Headers = []
+             Body = null
     Session Attrs = {}
 
 Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#loginCustomer(LoginRequest)
+             Type = com.Training.BankingApp.transaction.TransactionController
+           Method = com.Training.BankingApp.transaction.TransactionController#getAllTransactions(Integer, Integer)
 
 Async:
     Async started = false
@@ -105,146 +104,65 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVpa2hAZ21haWwuY29tIiwiaWF0IjoxNzIyODU0MDI3LCJleHAiOjE3MjI4NTU4Mjd9.b8fErbz5pLkm8StRnIDbPg-uY8K4nF5mu20ffavP3BM","userId":45,"username":"sheikh@gmail.com","email":"sheikh@gmail.com","phoneNumber":3129930485,"roleId":2,"loggedIn":true}
+             Body = [{"transactionId":1722400420051,"accountId":36,"toAccountNumber":"3pPubAL_RTubyO","amount":500,"date":"2024-07-31","creditDebit":"DB","transferId":65},{"transactionId":1722400420052,"accountId":30,"toAccountNumber":"1Lc-na4QTUeQd1","amount":500,"date":"2024-07-31","creditDebit":"CR","transferId":65},{"transactionId":1722400460833,"accountId":36,"toAccountNumber":"3pPubAL_RTubyO","amount":1000,"date":"2024-07-31","creditDebit":"DB","transferId":66},{"transactionId":1722400460834,"accountId":30,"toAccountNumber":"1Lc-na4QTUeQd1","amount":1000,"date":"2024-07-31","creditDebit":"CR","transferId":66},{"transactionId":1722401648501,"accountId":30,"toAccountNumber":"1Lc-na4QTUeQd1","amount":2000,"date":"2024-07-31","creditDebit":"DB","transferId":67},{"transactionId":1722401648502,"accountId":36,"toAccountNumber":"3pPubAL_RTubyO","amount":2000,"date":"2024-07-31","creditDebit":"CR","transferId":67},{"transactionId":1722401730218,"accountId":36,"toAccountNumber":"3pPubAL_RTubyO","amount":300,"date":"2024-07-31","creditDebit":"DB","transferId":68},{"transactionId":1722401730219,"accountId":30,"toAccountNumber":"1Lc-na4QTUeQd1","amount":300,"date":"2024-07-31","creditDebit":"CR","transferId":68}]
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
 ]]></system-out>
   </testcase>
-  <testcase name="testLoginCustomerFailure" classname="com.Training.BankingApp.UserControllerTests" time="0.011">
-    <system-out><![CDATA[LOGIN CUSTOMER API CALLED
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/loginCustomer
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"49"]
-             Body = {"username":"ashae@gmail.com","password":"12345"}
-    Session Attrs = {}
-
-Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#loginCustomer(LoginRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 401
-    Error message = null
-          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"25", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
-     Content type = text/plain;charset=UTF-8
-             Body = Invalid email or password
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginAdminSuccess" classname="com.Training.BankingApp.UserControllerTests" time="0.01">
-    <system-out><![CDATA[Admin login API called
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/loginAdmin
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"46"]
-             Body = {"email":"usama@gmail.com","password":"12345"}
-    Session Attrs = {}
-
-Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#loginAdmin(LoginRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 200
-    Error message = null
-          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
-     Content type = application/json
-             Body = {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2FtYUBnbWFpbC5jb20iLCJpYXQiOjE3MjI4NTQwMjcsImV4cCI6MTcyMjg1NTgyN30.HyUcNtdbSGTEByOdQ-79yKGWMWAj3dMCqtFzvboXu8A","userId":1,"username":"usama@gmail.com","email":"usama@gmail.com","phoneNumber":923014667645,"roleId":1,"loggedIn":true}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testLoginAdminFailure" classname="com.Training.BankingApp.UserControllerTests" time="0.009">
-    <system-out><![CDATA[Admin login API called
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /api/auth/loginAdmin
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"47"]
-             Body = {"email":"usama@gmail.com","password":"123456"}
-    Session Attrs = {}
-
-Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#loginAdmin(LoginRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 401
-    Error message = null
-          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"text/plain;charset=UTF-8", Content-Length:"25", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
-     Content type = text/plain;charset=UTF-8
-             Body = Invalid email or password
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-]]></system-out>
-  </testcase>
-  <testcase name="testGetUsersSuccess" classname="com.Training.BankingApp.UserControllerTests" time="0.014">
+  <testcase name="testGetAllTransactionsForbidden" classname="com.Training.BankingApp.TransactionControllerTests" time="0.025">
     <system-out><![CDATA[
 MockHttpServletRequest:
       HTTP Method = GET
-      Request URI = /api/getUsers
+      Request URI = /api/getAllTransactions
+       Parameters = {page=[0], size=[10]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.transaction.TransactionController
+           Method = com.Training.BankingApp.transaction.TransactionController#getAllTransactions(Integer, Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Forbidden
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testGetTransactionByAccountIdSuccess" classname="com.Training.BankingApp.TransactionControllerTests" time="0.041">
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/getTransactionByAccountId/28
        Parameters = {}
           Headers = []
              Body = null
     Session Attrs = {}
 
 Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#getUsers()
+             Type = com.Training.BankingApp.transaction.TransactionController
+           Method = com.Training.BankingApp.transaction.TransactionController#getTransactionByAccountId(long)
 
 Async:
     Async started = false
@@ -266,25 +184,105 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = [{"userId":1,"name":null,"address":null,"cnic":null,"username":"usama@gmail.com","password":"12345","email":"usama@gmail.com","phoneNumber":923014667645,"roleId":1,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":39,"name":"malikk","address":"lahore","cnic":"12345-6789012-9","username":"malik@gmail.com","password":"12345","email":"malik@gmail.com","phoneNumber":1234567,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":43,"name":"Ahmed","address":"Lahore","cnic":"35202-2369258-0","username":"ahmed@gmail.com","password":"12345","email":"ahmed@gmail.com","phoneNumber":1234567,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":45,"name":"Sheikh","address":"Lahore","cnic":"35202-239084-4","username":"sheikh@gmail.com","password":"12345","email":"sheikh@gmail.com","phoneNumber":3129930485,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":49,"name":"usman","address":"Lahore","cnic":"35202-2394859-4","username":"usman@gmail.com","password":"12345","email":"usman@gmail.com","phoneNumber":3014443093,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":51,"name":"Ashhar","address":"Lahore","cnic":"35202-2395843-2","username":"iashharali.18@gmail.com","password":"12345","email":"iashharali.18@gmail.com","phoneNumber":3124985764,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true},{"userId":52,"name":"New User","address":"789 New St","cnic":"1234567890125","username":"newuser@example.com","password":"password456","email":"newuser@example.com","phoneNumber":1234567890,"roleId":2,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_CUSTOMER"}],"credentialsNonExpired":true,"accountNonExpired":true}]
+             Body = []
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
 ]]></system-out>
   </testcase>
-  <testcase name="testGetUsersForbidden" classname="com.Training.BankingApp.UserControllerTests" time="0.007">
+  <testcase name="testGetTransactionByAccountIdFailure" classname="com.Training.BankingApp.TransactionControllerTests" time="0.012">
     <system-out><![CDATA[
 MockHttpServletRequest:
       HTTP Method = GET
-      Request URI = /api/getUsers
+      Request URI = /api/getTransactionByAccountId/12345
        Parameters = {}
           Headers = []
              Body = null
     Session Attrs = {}
 
 Handler:
-             Type = com.Training.BankingApp.user.UserController
-           Method = com.Training.BankingApp.user.UserController#getUsers()
+             Type = com.Training.BankingApp.transaction.TransactionController
+           Method = com.Training.BankingApp.transaction.TransactionController#getTransactionByAccountId(long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = []
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testGetTransactionByTransferIdSuccess" classname="com.Training.BankingApp.TransactionControllerTests" time="0.025">
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/getTransactionByTransferId/65
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.transaction.TransactionController
+           Method = com.Training.BankingApp.transaction.TransactionController#getTransactionByTransferId(long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = [{"transactionId":1722400420051,"accountId":36,"toAccountNumber":"3pPubAL_RTubyO","amount":500,"date":"2024-07-31","creditDebit":"DB","transferId":65},{"transactionId":1722400420052,"accountId":30,"toAccountNumber":"1Lc-na4QTUeQd1","amount":500,"date":"2024-07-31","creditDebit":"CR","transferId":65}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testGetTransactionByTransferIdForbidden" classname="com.Training.BankingApp.TransactionControllerTests" time="0.027">
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/getTransactionByTransferId/65
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.Training.BankingApp.transaction.TransactionController
+           Method = com.Training.BankingApp.transaction.TransactionController#getTransactionByTransferId(long)
 
 Async:
     Async started = false
