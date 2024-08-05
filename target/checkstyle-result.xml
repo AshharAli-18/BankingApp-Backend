@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
+<file name="D:\Redmath-Training\BankingApp-Backend\src\main\java\com\Training\BankingApp\account\AccountController.java">
+</file>
 <file name="D:\Redmath-Training\BankingApp-Backend\src\main\java\com\Training\BankingApp\BankingAppApplication.java">
 <error line="10" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 </file>
@@ -7,9 +9,17 @@
 <error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
 <error line="3" column="27" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - jakarta.persistence.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 </file>
+<file name="D:\Redmath-Training\BankingApp-Backend\src\main\java\com\Training\BankingApp\customerrequest\CustomerRequestController.java">
+</file>
 <file name="D:\Redmath-Training\BankingApp-Backend\src\main\java\com\Training\BankingApp\deletedaccount\DeletedAccount.java">
 <error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
 <error line="4" column="27" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - jakarta.persistence.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+</file>
+<file name="D:\Redmath-Training\BankingApp-Backend\src\main\java\com\Training\BankingApp\deletedaccount\DeletedAccountController.java">
+<error line="8" column="47" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.web.bind.annotation.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="16" column="27" severity="error" message="Variable &apos;deletedAccountService&apos; must be private and have accessor methods." source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
+</file>
+<file name="D:\Redmath-Training\BankingApp-Backend\src\main\java\com\Training\BankingApp\deletedaccount\DeletedAccountService.java">
 </file>
 <file name="D:\Redmath-Training\BankingApp-Backend\src\main\java\com\Training\BankingApp\otp\OtpController.java">
 <error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
