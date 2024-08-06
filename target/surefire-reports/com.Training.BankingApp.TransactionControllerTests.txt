@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.Training.BankingApp.TransactionControllerTests
--------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.216 s -- in com.Training.BankingApp.TransactionControllerTests
