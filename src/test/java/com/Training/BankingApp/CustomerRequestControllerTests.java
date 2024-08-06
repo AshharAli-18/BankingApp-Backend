@@ -94,7 +94,7 @@ public class CustomerRequestControllerTests {
                 .andExpect(MockMvcResultMatchers.status().isForbidden());
     }
 
-    @Order(6)
+    @Order(7)
     @Test
     public void testDeleteRequestSuccess() throws Exception {
         int requestId = 21; // Use a valid request ID for your tests
@@ -105,7 +105,7 @@ public class CustomerRequestControllerTests {
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
-    @Order(7)
+    @Order(6)
     @Test
     public void testDeleteRequestForbidden() throws Exception {
         int requestId = 17; // Use a valid request ID for your tests

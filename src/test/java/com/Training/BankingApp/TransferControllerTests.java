@@ -47,7 +47,7 @@ public class TransferControllerTests {
 //    }
 
 
-    @Order(2)
+    @Order(1)
     @Test
     public void testTransferMoneyFailure() throws Exception {
         String transferRequest = "{\"fromAccountId\":\"12345\",\"toAccountNumber\":\"67890\",\"amount\":1000.00}";
@@ -61,7 +61,7 @@ public class TransferControllerTests {
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError());
     }
 
-    @Order(3)
+    @Order(2)
     @Test
     public void testGetAllTransfersSuccess() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getAllTransfers")
@@ -75,7 +75,7 @@ public class TransferControllerTests {
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(Matchers.greaterThanOrEqualTo(0))));
     }
 
-    @Order(4)
+    @Order(3)
     @Test
     public void testGetAllTransfersForbidden() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getAllTransfers")
