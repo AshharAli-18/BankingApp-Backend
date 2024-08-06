@@ -26,7 +26,7 @@ public class CustomerRequestController {
     public ResponseEntity<?> customerRequest(@RequestBody CustomerRequestDTO customerRequestDTO) {
 
         try {
-            System.out.println("CustomerRequestDTO: " + customerRequestDTO);
+
             customerRequestService.createCustomerRequest(customerRequestDTO);
             return ResponseEntity.ok("Customer Request Sent Successfully!");
         } catch (Exception e) {
