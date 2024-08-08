@@ -8,6 +8,7 @@ import com.Training.BankingApp.deletedaccount.DeletedAccount;
 import com.Training.BankingApp.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
@@ -39,6 +40,11 @@ public class AccountService {
     private static final int RANDOM_DIGIT_UPPER_BOUND = 10;
     private final SecureRandom random = new SecureRandom();
     private final Set<String> generatedAccountNumbers = new HashSet<>();
+    private final PasswordEncoder passwordEncoder;
+
+    public AccountService(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     public String generateAccountNumber() {
         String accountNumber;
@@ -123,8 +129,8 @@ public class AccountService {
 
         User user = new User();
         user.setUsername(accountCreateRequest.getUsername());
-        // user.setPassword(passwordEncoder.encode(accountCreateRequest.getPassword()));
-        user.setPassword(accountCreateRequest.getPassword());
+        user.setPassword(passwordEncoder.encode(accountCreateRequest.getPassword()));
+//        user.setPassword(accountCreateRequest.getPassword());
         user.setEmail(accountCreateRequest.getEmail());
         user.setPhoneNumber(accountCreateRequest.getPhoneNumber());
         user.setRoleId(2);

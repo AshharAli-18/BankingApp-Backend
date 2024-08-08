@@ -23,7 +23,7 @@ public class UserController {
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<?> loginCustomer(@RequestBody LoginRequest loginRequest) {
         try {
-            ResponseEntity<?> response = userService.loginCustomer(loginRequest);
+            ResponseEntity<?> response = userService.loginCustomerUpdated(loginRequest);
             return response;
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
