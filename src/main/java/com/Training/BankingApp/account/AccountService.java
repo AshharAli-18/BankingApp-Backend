@@ -40,11 +40,11 @@ public class AccountService {
     private static final int RANDOM_DIGIT_UPPER_BOUND = 10;
     private final SecureRandom random = new SecureRandom();
     private final Set<String> generatedAccountNumbers = new HashSet<>();
-    private final PasswordEncoder passwordEncoder;
 
-    public AccountService(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
-    }
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+
 
     public String generateAccountNumber() {
         String accountNumber;

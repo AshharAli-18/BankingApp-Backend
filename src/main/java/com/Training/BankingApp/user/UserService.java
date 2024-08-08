@@ -32,11 +32,8 @@ public class UserService {
     private AccountRepository accountRepository;
 
     @Autowired
-    private final PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
-    public UserService(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
-    }
 
 
 //    public UserService(PasswordEncoder passwordEncoder) {
